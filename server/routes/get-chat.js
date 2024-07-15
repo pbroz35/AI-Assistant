@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
       body: JSON.stringify({
         inputs: `system You are a helpful assistant, providing informative and friendly answers to the user. user ${question} assistant`,
         parameters: {
-          max_new_tokens: 500
+          max_new_tokens: 1000
         }
       })
     });
