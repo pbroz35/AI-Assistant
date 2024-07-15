@@ -6,6 +6,11 @@ function App() {
   //const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("empty");
 
+  const parseBoldText = (text: string): string => {
+    return text.replace(/\*\*(.*?)\*\*/g, '<br></br> <strong>$1</strong> <br></br>');
+  };
+
+  
   const fetchAnswers = () => {
     console.log("fetching data..");
 
@@ -13,7 +18,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         console.log("Value", data);
-        setAnswer(data.generated_text);
+        setAnswer(parseBoldText(data.generated_text));
         console.log("Fetched answer from server.");
       })
       .catch((error) => {
@@ -21,6 +26,8 @@ function App() {
       });
 
       console.log("finished fetching data")
+
+
   };
 
 
@@ -28,7 +35,7 @@ function App() {
 
   return (
     <>
-      <div>{answer}</div>
+      <div dangerouslySetInnerHTML={{ __html: answer }} />
     </>
   );
 }
