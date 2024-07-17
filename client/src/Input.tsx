@@ -1,6 +1,6 @@
 import { FaSearch } from "react-icons/fa";
 
-const Input = ({ question, setQuestion, answer, setAnswer }) => {
+const Input = ({ question, setQuestion, answer, setAnswer, chatHistory, setChatHistory }) => {
   
   const parseBoldText = (text: string): string => {
     // Handle bold text
@@ -32,19 +32,26 @@ const Input = ({ question, setQuestion, answer, setAnswer }) => {
     console.log(`value is ${question}`);
     console.log("fetching data..");
 
+    setChatHistory([...chatHistory, question]);
+
+
     fetch(`http://localhost:3500/getChat?question=${encodeURIComponent(question)}`)
-      .then((res) => res.json())
-      .then((data) => {
+    .then((res) => res.json())
+    .then((data) => {
         console.log("Value", data);
-        setAnswer(parseBoldText(data.generated_text));
+        const fetchedAnswer = parseBoldText(data.generated_text);
+        setAnswer(fetchedAnswer);
+
+        setChatHistory((prevChatHistory) => [...prevChatHistory, fetchedAnswer]);
+        console.log(chatHistory);
+
         console.log("Fetched answer from server.");
-      })
-      .catch((error) => {
+    })
+    .catch((error) => {
         console.error("Error fetching data", error);
-      });
+    });
 
-    console.log("finished fetching data");
-
+console.log("finished fetching data");
   };
 
 
