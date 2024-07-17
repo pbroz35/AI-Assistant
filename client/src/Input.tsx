@@ -1,6 +1,6 @@
 import { FaSearch } from "react-icons/fa";
 
-const Input = ({ question, setQuestion, answer, setAnswer, chatHistory, setChatHistory }) => {
+const Input = ({ question, setQuestion, answer, setAnswer, chatHistory, setChatHistory, loading, setLoading }) => {
   
   const parseBoldText = (text: string): string => {
     // Handle bold text
@@ -26,7 +26,7 @@ const Input = ({ question, setQuestion, answer, setAnswer, chatHistory, setChatH
   const handleSubmit = (e:any) => {
 
     e.preventDefault();
-    
+    setLoading(true);
     //Debugging purposes
     console.log("handling submit..");
     console.log(`value is ${question}`);
@@ -42,6 +42,8 @@ const Input = ({ question, setQuestion, answer, setAnswer, chatHistory, setChatH
         const fetchedAnswer = parseBoldText(data.generated_text);
         setAnswer(fetchedAnswer);
 
+        setLoading(false);
+        
         setChatHistory((prevChatHistory) => [...prevChatHistory, fetchedAnswer]);
         console.log(chatHistory);
 
@@ -51,8 +53,11 @@ const Input = ({ question, setQuestion, answer, setAnswer, chatHistory, setChatH
         console.error("Error fetching data", error);
     });
 
-console.log("finished fetching data");
-  };
+  console.log("finished fetching data");
+  
+  setQuestion("");
+  
+};
 
 
 
@@ -62,7 +67,8 @@ console.log("finished fetching data");
       <form className="search">
         <input
           type="text"
-          placeholder="Message AI"
+          value={question}
+          placeholder="Write a question..."
           name="search"
           onChange={(e)=>{setQuestion(e.target.value)}}
           onKeyDown={(e) => {

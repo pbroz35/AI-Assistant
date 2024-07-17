@@ -5,7 +5,7 @@ const cors = require("cors");
 
 router.get("/", async (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
-  const question = 'ipad 10th gen vs. ipad air 5th gen'; // Your custom question
+  const question = req.query.question; // Your custom question
 
   try {
     const response = await fetch('https://arcade.evl.uic.edu/llama/generate', {
@@ -14,9 +14,9 @@ router.get("/", async (req, res) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        inputs: `system You are a helpful assistant, providing informative and friendly answers to the user. user ${question} assistant`,
+        inputs: `system You are a helpful assistant, providing informative and friendly answers to the user aiming for responses around 250 words. user ${question} under 150 words or introduce yourself assistant`,
         parameters: {
-          max_new_tokens: 1000
+          max_new_tokens: 400
         }
       })
     });

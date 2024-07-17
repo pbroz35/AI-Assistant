@@ -11,17 +11,20 @@
 }
 
 /* Organize everything in a column */
-body {
+.body-container {
   margin: 0;
   display: flex;
   flex-direction: column;
   height: 100vh; /* Ensure body takes the full height of the viewport */
+  width: 1000px;
 }
 
 #root {
-  max-width: 900px;
+  width: 1000px;
   margin: 0 auto;
   padding: 2rem;
+  display: flex;
+  justify-content: center;
   flex: 1; /* Allow #root to grow and take available space */
 }
 
@@ -120,4 +123,39 @@ strong {
   color: white;
   background-color: rgb(64, 63, 63);
   margin-bottom: 10px;
+}
+
+.Header-new-chat {
+  position: fixed; /* Fix the header at the top */
+  top: 0; /* Align to the top of the viewport */
+  left: 0; /* Align to the left of the viewport */
+  display: flex;
+  width: 100%; /* Full width of the viewport */
+  padding: 1rem; /* Add padding for better spacing */
+}
+
+.new-chat-icon{
+  color:white;
+  font-size:x-large;
+  padding: 8px;
+  border-radius: 15px;
+}
+
+.new-chat-icon:hover{
+  color:white;
+  font-size:x-large;
+  background-color: #484848;
+  padding: 8px;
+  border-radius: 15px;
+}
+
+.loading-message {
+  text-align: center;
+  padding: 2rem;
+  list-style: none; /* Remove default list styling */
+}
+
+.spinner {
+  width: 25px; /* Adjust the width */
+  height: 25px; /* Adjust the height */
 }
