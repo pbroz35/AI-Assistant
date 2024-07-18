@@ -19,13 +19,21 @@
   width: 1000px;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 #root {
   width: 1000px;
   margin: 0 auto;
   padding: 2rem;
   display: flex;
   justify-content: center;
-  flex: 1; /* Allow #root to grow and take available space */
+  flex-direction: column; /* Stack children vertically */
+  min-height: 100vh; /* Ensure at least full viewport height */
+  height: auto; /* Allow height to grow based on content */
 }
 
 strong {

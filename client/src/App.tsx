@@ -17,9 +17,10 @@ function App() {
   return (
     <>
     <div className="body-container">
-      <Header></Header>
+      <Header chatHistory={chatHistory} setChatHistory={setChatHistory}></Header>
       <CardContainer chatHistory = {chatHistory} loading={loading}></CardContainer>
       <Input loading={loading} setLoading= {setLoading} chatHistory = {chatHistory} setChatHistory={setChatHistory} question={question} setQuestion={setQuestion} answer={answer} setAnswer = {setAnswer}></Input>
+    
     </div>
     
     </>

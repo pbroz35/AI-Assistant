@@ -1,16 +1,14 @@
 import { RiChatNewLine } from "react-icons/ri";
 
-const Header = () => {
+const Header = ({setChatHistory, chatHistory}) => {
    
     const clearHistory = () => {
 
         console.log("Clearing chat history..");
         
+        setChatHistory([]);
         
-
-
-
-
+        console.log(chatHistory);
     }
 
 
