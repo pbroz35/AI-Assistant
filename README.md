@@ -1,63 +1,64 @@
-AI Chatbot with Llama 3
+# AI Chatbot with Llama 3
+
 This project is an AI chatbot built using a variety of modern web technologies. It leverages the power of Llama 3 for natural language processing and understanding, providing an interactive and intelligent chat experience.
 
-Technologies Used
-Frontend:
+## Technologies Used
 
-TypeScript
-JavaScript
-JSX
-Chakra UI (for design)
-React
-Backend:
+- **Frontend:**
+  - JavaScript / TypeScript / HTML / CSS  / JSX
+  - Chakra UI (for design)
+  - React
 
-Node.js
-Express
-AI Model:
+- **Backend:**
+  - Node.js
+  - Express
 
-Llama 3
-Getting Started
+- **AI Model:**
+  - Llama 3
+
+## Getting Started
+
 To run this project locally, follow these steps:
 
-Prerequisites
-Node.js installed
-npm (Node Package Manager) installed
-Installation
-Clone the repository:
+### Prerequisites
 
-bash
-Copy code
-git clone <repository_url>
-cd <repository_name>
-Install server dependencies:
+- Node.js installed
+- npm (Node Package Manager) installed
 
-bash
-Copy code
-cd server
-npm install
-Install client dependencies:
+### Installation
 
-bash
-Copy code
-cd ../client
-npm install
-Running the Program
-Start the server:
+1. **Clone the repository:**
 
+   ```bash
+   git clone <repository_url>
+   cd <repository_name>
+
+2. **Install server dependencies:**
 Open a terminal and navigate to the server directory, then run:
 
-bash
-Copy code
-cd server
-nodemon server
-Start the client:
+   ```bash
+   cd server
+   npm install
 
+3. **Install client dependencies:**
 Open a new terminal window, navigate to the client directory, then run:
 
-bash
-Copy code
-cd client
-npm run dev
-Accessing the Application
-Once both the server and client are running, you can access the application by navigating to the respective localhost URLs provided by your terminal.
+   ```bash
+   cd client
+   npm install
+   
+### **Running the program:**
+
+1. **Start the server:**
+Open a terminal and navigate to the server directory, then run:
+
+   ```bash
+   cd client
+   npm install
+
+2. 
+   
+
+   
+
 
