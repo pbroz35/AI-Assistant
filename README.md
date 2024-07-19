@@ -1,4 +1,5 @@
 # AI Chatbot with Llama 3
+![Screenshot from 2024-07-19 18-15-19](https://github.com/user-attachments/assets/2fb0131a-9887-470c-91cd-01d24a4addfe)
 
 This project is an AI chatbot built using a variety of modern web technologies. It leverages the power of Llama 3 for natural language processing and understanding, providing an interactive and intelligent chat experience.
 
@@ -17,7 +18,6 @@ This project is an AI chatbot built using a variety of modern web technologies. 
   - Llama 3
 
 
-![Screenshot from 2024-07-19 18-15-19](https://github.com/user-attachments/assets/2fb0131a-9887-470c-91cd-01d24a4addfe)
 
 
 
